@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRUDS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="crud">
+
+         <!-- Header  -->
+        <div class="head">
+            <h2>CRUDS</h2>
+            <p>Product Management System</p>
+        </div>
+
+        <!-- Inputs -->
+        <div class="inputs">
+
+            <input
+                type="text"
+                placeholder="Title"
+                id="title"
+            >
+
+            <div class="price">
+
+                <input
+                    onkeyup="getTotal()"
+                    type="number"
+                    id="price"
+                    placeholder="Price"
+                >
+
+                <input
+                    onkeyup="getTotal()"
+                    type="number"
+                    id="taxes"
+                    placeholder="Taxes"
+                >
+
+                <input
+                    onkeyup="getTotal()"
+                    type="number"
+                    id="ads"
+                    placeholder="Ads"
+                >
+
+                <input
+                    onkeyup="getTotal()"
+                    type="number"
+                    id="discount"
+                    placeholder="Discount"
+                >
+
+                <small id="total">0</small>
+
+            </div>
+
+            <input
+                type="number"
+                placeholder="Count"
+                id="count"
+            >
+
+            <input
+                type="text"
+                placeholder="Category"
+                id="category"
+            >
+
+            <button id="submit">Create</button>
+
+        </div>
+
+        <!-- Outputs -->
+        <div class="outputs">
+
+            <!-- Search -->
+            <div class="searchBlock">
+
+                <input
+                    onkeyup="searchData(this.value)"
+                    type="text"
+                    id="search"
+                    placeholder="Search"
+                >
+
+                <div class="btnSearch">
+
+                    <button
+                        onclick="getSearchMood(this.id)"
+                        id="searchTitle"
+                    >
+                        Search By Title
+                    </button>
+
+                    <button
+                        onclick="getSearchMood(this.id)"
+                        id="searchCategory"
+                    >
+                        Search By Category
+                    </button>
+
+                </div>
+
+                <!-- Delete All -->
+                <div id="deleteAll"></div>
+
+                <!-- Table -->
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Taxes</th>
+                            <th>Ads</th>
+                            <th>Discount</th>
+                            <th>Total</th>
+                            <th>Category</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tbody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
